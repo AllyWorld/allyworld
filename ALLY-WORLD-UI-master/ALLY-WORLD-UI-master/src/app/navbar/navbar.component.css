@@ -1,0 +1,55 @@
+.fb-nav {
+    height: 42px !important;
+    background-color: aquamarine;
+    border-bottom: 1px solid aqua;
+}
+
+.fb-nav a {
+    color: #fff;
+}
+
+.top-form input[type="text"] {
+    width: 393px;
+    height: 28px;
+    border: none;
+    border-radius: 0;
+    outline: none;
+
+}
+
+.top-form input[type="text"] :focus {
+    border-color: transparent;
+}
+
+.top-form button {
+    width: 46px;
+    height: 28px;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    background-color: skyblue;
+    padding: 0;
+}
+
+.border-right {
+    border-right: 0.5px solid #15233f;
+    margin: 12px;
+}
+
+.collapse ul li a i {
+    color: #15233f;
+}
+
+.wrapper {
+    width: 1100px ;
+    margin: 0 auto;
+}
+
+@media(max-width:994px){
+    .top-form input[type="text"]{
+        width: auto;
+    }
+    .fb-nav, .wrapper {
+        min-width: 994px;
+    }
+}

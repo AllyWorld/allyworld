@@ -1,0 +1,59 @@
+<app-header></app-header>
+<form>
+<div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+   <div class="form-group">
+        <label class="control-label">First Name</label>
+        <div class="col">
+          <input type="First Name" class="form-control" id="name" placeholder="Enter username" required>
+        </div>
+      </div>
+<br>
+<div class="form-group">
+        <label class="control-label">Last Name</label>
+        <div class="col">
+          <input type="Last Name" class="form-control" id="name" placeholder="Enter lastname" required>
+        </div>
+      </div>
+<br>
+<div class="form-group">
+        <label class="control-label">E-mail</label>
+        <div class="col">
+          <input type="email" class="form-control" id="name" placeholder="Enter email" required>
+        </div>
+      </div>
+<br>
+<div class="form-group">
+        <label class="control-label">Phone Number</label>
+        <div class="col">
+          <input type="phoneNumber" class="form-control" id="name" placeholder="Enter PhoneNumber" required>
+        </div>
+      </div>
+<br>
+<div class="form-group">
+        <label class="control-label">Current City</label>
+        <div class="col">
+          <input type="city" class="form-control" id="name" placeholder="Enter CurrentCity" required>
+        </div>
+      </div>
+<br>
+<div class="form-group">
+        <label class="control-label">Password</label>
+        <div class="col">
+          <input type="password" class="form-control" id="name" placeholder="Enter Password" required>
+        </div>
+      </div>
+<br>
+    <div class="form-group">
+        <label class="control-label">ReEnterPassword</label>
+        <div class="col">
+          <input type="Repeat password" class="form-control" id="name" placeholder="ReEnter Password" required>
+        </div>
+      </div>
+    </div>
+<br>
+
+  <input type="button" name="navigatetohomepage" [routerLink]="['../home']" value="Register" />
+</form>
+
