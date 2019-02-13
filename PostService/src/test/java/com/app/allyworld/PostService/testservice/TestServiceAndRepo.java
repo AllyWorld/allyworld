@@ -41,8 +41,8 @@ public class TestServiceAndRepo {
 		comments.add(1);
 		comments.add(2);
 		comments.add(3);
-		post = new Post(100, 1, "Feeling Excited!!", "http://localhost:8888.image.com", LocalDateTime.now(),
-				new Likes(1000, likes), new Comments(comments, "wow..nice!!", LocalDateTime.now(), 10));
+		post = new Post(/* 100, */1, "Feeling Excited!!", "http://localhost:8888.image.com", /* LocalDateTime.now(), */
+				new Likes(1000, likes), new Comments(comments, "wow..nice!!"/* , LocalDateTime.now() */, 10));
 		// postServiceImpl.addNewPost(post);
 	}
 
@@ -72,7 +72,7 @@ public class TestServiceAndRepo {
 	@Test
 	public void testGetAllPosts() throws InvalidInputException {
 		List<Post> post = postServiceImpl.getAllPosts();
-		assertEquals(1, post.size());
+		assertEquals(2, post.size());
 	}
 
 	@Test
@@ -90,8 +90,8 @@ public class TestServiceAndRepo {
 		comments.add(1);
 		comments.add(2);
 		comments.add(3);
-		Post post = new Post(100, 1, "feeling Happy!!", "http://localhost:8888.image.com", LocalDateTime.now(),
-				new Likes(1000, likes), new Comments(comments, "wow..nice!!", LocalDateTime.now(), 10));
+		Post post = new Post(/* 100, */ 1, "feeling Happy!!", "http://localhost:8888.image.com", /* LocalDateTime.now(), */
+				new Likes(1000, likes), new Comments(comments, "wow..nice!!", /* LocalDateTime.now(), */10));
 		Post updatedPost = postServiceImpl.updatePost(post);
 		assertEquals("feeling Happy!!", updatedPost.getStatus());
 	}

@@ -28,12 +28,12 @@ public class PostSeviceResource {
 	private PostService postService;
 
 	@PostMapping
-	public ResponseEntity<String> addNewPost(@RequestBody Post post) throws InvalidInputException {
+	public ResponseEntity<Post> addNewPost(@RequestBody Post post) throws InvalidInputException {
 		postService.addNewPost(post);
 		if (post == null) {
-			return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
 		} else {
-			return new ResponseEntity<String>(HttpStatus.OK);
+			return new ResponseEntity<Post>(post,HttpStatus.OK);
 		}
 	}
 
@@ -42,8 +42,8 @@ public class PostSeviceResource {
 		List<Post> posts = null;
 		try {
 			posts = postService.getAllPosts();
-			System.out.println(posts);
-			return new ResponseEntity<>(HttpStatus.OK);
+			//System.out.println(posts);
+			return new ResponseEntity<>(posts,HttpStatus.OK);
 		} catch (InvalidInputException e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
@@ -78,11 +78,10 @@ public class PostSeviceResource {
 		postService.deletePostById(postId);
 
 	}
-	
-	@PutMapping
-	public Post updatePost(Post post) {
-		return postService.updatePost(post);
 
+	@PutMapping
+	public Post updatePost(@RequestBody Post post) {
+		return postService.updatePost(post);
 	}
 
 }

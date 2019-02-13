@@ -1,40 +1,27 @@
-package com.app.allyworld.PostService.entity;
+package com.app.allyworld.website.entity;
 
-import java.time.LocalDateTime;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document
 public class Post {
-
-	@Id
 	private Integer postId;
 	private Integer profileId;
 	private String status;
 	private String url;
-	private LocalDateTime date;
+	private String date;
 	private Likes likes;
 	private Comments comments;
-	private static int postIdGenerator;
+
+	
+	  private static int postIdGenerator;
 	  
-	  static 
-	  { 
-		  postIdGenerator=100; 
-		 
-	  }
-	  {
-		  postId = postIdGenerator++; 
-	  }
+	  static { postIdGenerator=100; } { postId = postIdGenerator++; }
+	  
 	 
 	public Post() {
 		super();
 	}
 
-	public Post(/*Integer postId*/Integer profileId, String status, String url/* , LocalDateTime date */, Likes likes,
+	public Post( /* Integer postId, */Integer profileId, String status, String url/* , LocalDateTime date */, Likes likes,
 			Comments comments) {
 		super();
-		/* this.postId=postId; */
 		this.profileId = profileId;
 		this.status = status;
 		this.url = url;
@@ -42,8 +29,7 @@ public class Post {
 		this.likes = likes;
 		this.comments = comments;
 	}
-	
-	
+
 	public Integer getPostId() {
 		return postId;
 	}
@@ -76,12 +62,12 @@ public class Post {
 		this.url = url;
 	}
 
-	public LocalDateTime getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDateTime localDateTime) {
-		this.date = localDateTime;
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	public Likes getLikes() {

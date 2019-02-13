@@ -1,6 +1,5 @@
 package com.app.allyworld.PostService;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,12 +14,15 @@ import com.app.allyworld.PostService.entity.Post;
 import com.app.allyworld.PostService.service.PostService;
 
 @SpringBootApplication
+//@EnableOAuth2Sso
+/* @EnableWebSecurity */
 public class PostServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PostServiceApplication.class, args);
 	}
 
+	
 	@Bean
 	public CommandLineRunner populateData(PostService postService) {
 		return (arg) -> {
@@ -31,12 +33,13 @@ public class PostServiceApplication {
 			comments.add(1);
 			comments.add(2);
 			comments.add(3);
-			postService.addNewPost(
-					new Post(100, 1, "Feeling Excited!!", "http://localhost:8888.image.com", LocalDateTime.now(),
-							new Likes(1000, likes), new Comments(comments, "wow..nice!!", LocalDateTime.now(), 10)));
-			// Post newppost = postServiceImpl.addNewPost(post);
-			// System.out.println(newppost);
+			postService.addNewPost(new Post(/* 100, */ 1, "Feeling Excited!!", "http://localhost:8888.image.com", /*
+																											 * LocalDateTime
+																											 * .now(),
+																											 */
+					new Likes(1000, likes), new Comments(comments, "wow..nice!!", /* LocalDateTime.now(), */ 10)));
+			// Post newppost =postServiceImpl.addNewPost(post);
 		};
-	}
-
+	  }
+	 
 }

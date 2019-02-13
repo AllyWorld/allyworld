@@ -25,7 +25,9 @@ public class PostServiceImpl implements PostService {
 		try {
 			post.setDate(LocalDateTime.now());
 			post.getComments().setCommentTime(LocalDateTime.now());
+			System.out.println(post);
 			postRepository.save(post);
+			System.out.println(post);
 		} catch (Exception e) {
 			throw new InvalidInputException("Post Not Found");
 		}
@@ -66,6 +68,8 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public Post updatePost(Post post) {
+		
+		System.out.println(post);
 		post.setStatus(post.getStatus());
 		post.setUrl(post.getUrl());
 		post.getLikes().setLikes(post.getLikes().getLikes());

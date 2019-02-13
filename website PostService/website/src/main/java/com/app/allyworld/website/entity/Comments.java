@@ -1,14 +1,11 @@
-package com.app.allyworld.PostService.entity;
+package com.app.allyworld.website.entity;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document
 public class Comments {
 
-	private List<Integer> CommentProfileId;
+	private List<Integer> commentProfileId;
 	private String comment;
 	private LocalDateTime commentTime;
 	private Integer likes;
@@ -19,18 +16,18 @@ public class Comments {
 
 	public Comments(List<Integer> commentProfileId, String comment, /* LocalDateTime commentTime, */ Integer likes) {
 		super();
-		CommentProfileId = commentProfileId;
+		this.commentProfileId = commentProfileId;
 		this.comment = comment;
 		/* this.commentTime = commentTime; */
 		this.likes = likes;
 	}
 
 	public List<Integer> getCommentProfileId() {
-		return CommentProfileId;
+		return commentProfileId;
 	}
 
 	public void setCommentProfileId(List<Integer> commentProfileId) {
-		CommentProfileId = commentProfileId;
+		this.commentProfileId = commentProfileId;
 	}
 
 	public String getComment() {
@@ -59,7 +56,7 @@ public class Comments {
 
 	@Override
 	public String toString() {
-		return "Comments [CommentProfileId=" + CommentProfileId + ", comment=" + comment + ", commentTime="
+		return "Comments [CommentProfileId=" + commentProfileId + ", comment=" + comment + ", commentTime="
 				+ commentTime + ", likes=" + likes + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
 				+ ", toString()=" + super.toString() + "]";
 	}

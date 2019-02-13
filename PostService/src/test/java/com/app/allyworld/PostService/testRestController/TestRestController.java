@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.app.allyworld.PostService.entity.Comments;
 import com.app.allyworld.PostService.entity.Likes;
 import com.app.allyworld.PostService.entity.Post;
+import com.app.allyworld.PostService.exceptions.InvalidInputException;
 import com.app.allyworld.PostService.resource.PostSeviceResource;
 
 @RunWith(SpringRunner.class)
@@ -62,8 +64,8 @@ public class TestRestController {
 		comments.add(1);
 		comments.add(2);
 		comments.add(3);
-		Post post = new Post(100, 1, "Feeling Excited!!", "http://localhost:8888.image.com", LocalDateTime.now(),
-				new Likes(1000, likes), new Comments(comments, "wow..nice!!", LocalDateTime.now(), 10));
+		Post post = new Post(/* 100, */ 1, "Feeling Excited!!", "http://localhost:8888.image.com", /* LocalDateTime.now(), */
+				new Likes(1000, likes), new Comments(comments, "wow..nice!!"/* , LocalDateTime.now() */, 10));
 		ResponseEntity<String> responseEntity = testRestTemplate.postForEntity("/posts", post, String.class);
 		assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
 	}
@@ -77,8 +79,8 @@ public class TestRestController {
 		comments.add(1);
 		comments.add(2);
 		comments.add(3);
-		Post post = new Post(100, 1, "Feeling Happy!!", "http://localhost:8888.image.com", LocalDateTime.now(),
-				new Likes(1000, likes), new Comments(comments, "wow..nice!!", LocalDateTime.now(), 10));
+		Post post = new Post(/* 100, */ 1, "Feeling Happy!!", "http://localhost:8888.image.com", /* LocalDateTime.now(), */
+				new Likes(1000, likes), new Comments(comments, "wow..nice!!", /* LocalDateTime.now(), */ 10));
 		testRestTemplate.put("/posts", post);
 		ResponseEntity<String> responseEntity = testRestTemplate.postForEntity("/posts", post, String.class);
 		assertEquals("Feeling Happy!!", post.getStatus());
