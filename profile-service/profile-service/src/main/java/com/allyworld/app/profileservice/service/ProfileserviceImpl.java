@@ -1,6 +1,5 @@
 package com.allyworld.app.profileservice.service;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.allyworld.app.profileservice.entity.LoginCredentials;
 import com.allyworld.app.profileservice.entity.Profile;
 import com.allyworld.app.profileservice.repository.ProfileRepo;
 
@@ -19,10 +19,9 @@ public class ProfileserviceImpl implements ProfileService {
 	private ProfileRepo repository;
 
 	@Override
-	public ResponseEntity<Profile> addNewProfile(Profile profile) {
+	public void addNewProfile(Profile profile) {
 		System.out.println("profile");
 		repository.save(profile);
-		return new ResponseEntity<Profile>(HttpStatus.OK);
 
 	}
 
@@ -49,7 +48,7 @@ public class ProfileserviceImpl implements ProfileService {
 	@Override
 	public void updateProfile(Profile profile) {
 		profile.setFullName(profile.getFullName());
-		profile.setDateOfBirth(LocalDateTime.now());
+		profile.setDateOfBirth(profile.getDateOfBirth());
 		profile.setRelationShipStatus(profile.getRelationShipStatus());
 		profile.setUserName(profile.getUserName());
 		profile.setCurrentAddress(profile.getCurrentAddress());
@@ -117,6 +116,18 @@ public class ProfileserviceImpl implements ProfileService {
 		}
 		receiversProfile.setPendingFriendList(receiverPendingFriendList);
 		repository.save(receiversProfile);
+	}
+
+	@Override public Profile getProfileByEmail(String email) {
+	  System.out.println("hii"); 
+	  //return repository.findProfileBylogin(email);
+	  return new Profile(); 
+	  }
+
+	@Override
+	public Profile getProfileByLogin(LoginCredentials loginCredentials) {
+		System.out.println("hii");
+		return repository.findProfileBylogin(loginCredentials);
 	}
 
 }

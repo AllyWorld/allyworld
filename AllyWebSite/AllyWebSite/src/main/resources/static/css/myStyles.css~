@@ -1,0 +1,6 @@
+.width10{
+width:10%;
+}
+.lalign10{
+margin-left:10px;
+}

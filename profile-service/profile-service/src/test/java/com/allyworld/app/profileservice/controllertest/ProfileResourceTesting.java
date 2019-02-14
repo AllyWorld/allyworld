@@ -31,14 +31,16 @@ public class ProfileResourceTesting {
 
 	@Before
 	public void setUp() {
-		profileTest = new Profile("priyanka", "priyanka reddivari", "female", null, 9985617661L, "single", "Mumbai",
-				"Tamil Nadu", null, null);
-		profileTest1 = new Profile("Mrudula123", "Mrudula Nimmala", "female", null, 102347661L, "single", "Mumbai",
-				"Macherla", null, null);
-		profileTest2 = new Profile("Sweety", "Vineela", "female", null, 5231462L, "single", "Guntur", "Macherla", null,
-				null);
-		profileTest3 = new Profile("priyanka", "priyanka reddivari", "female", null, 2100356545L, "single", "Mumbai",
-				"Tamil Nadu", null, null);
+		/*
+		 * profileTest = new Profile("priyanka", "priyanka reddivari", "female", null,
+		 * 9985617661L, "single", "Mumbai", "Tamil Nadu", null, null); profileTest1 =
+		 * new Profile("Mrudula123", "Mrudula Nimmala", "female", null, 102347661L,
+		 * "single", "Mumbai", "Macherla", null, null); profileTest2 = new
+		 * Profile("Sweety", "Vineela", "female", null, 5231462L, "single", "Guntur",
+		 * "Macherla", null, null); profileTest3 = new Profile("priyanka",
+		 * "priyanka reddivari", "female", null, 2100356545L, "single", "Mumbai",
+		 * "Tamil Nadu", null, null);
+		 */
 
 	}
 

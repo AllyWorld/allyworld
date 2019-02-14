@@ -2,7 +2,6 @@ package com.allyworld.app.profileservice.servicetest;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.junit.Test;
@@ -10,7 +9,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.allyworld.app.profileservice.entity.Profile;
@@ -29,8 +27,10 @@ public class ServiceTest {
 	@Test
 	public void testForAddNewProfile() {
 
-		profileTest = new Profile("priyanka", "priyanka reddivari", "female", null, 10235487L, "single", "Mumbai",
-				"Tamil Nadu", null, null);
+		/*
+		 * profileTest = new Profile("priyanka", "priyanka reddivari", "female", null,
+		 * 10235487L, "single", "Mumbai", "Tamil Nadu", null, null);
+		 */
 		service.addNewProfile(profileTest);
 		System.out.println(profileTest.toString());
 		assertEquals(
@@ -65,8 +65,10 @@ public class ServiceTest {
 
 	@Test
 	public void deleteProfileTest() {
-		profileTest = new Profile("priyanka", "priyanka reddivari", "female", null, 10235487L, "single", "Mumbai",
-				"Tamil Nadu", null, null);
+		/*
+		 * profileTest = new Profile("priyanka", "priyanka reddivari", "female", null,
+		 * 10235487L, "single", "Mumbai", "Tamil Nadu", null, null);
+		 */
 		service.addNewProfile(profileTest);
 
 		assertEquals(HttpStatus.OK, service.deleteProfile(profileTest).getStatusCode());

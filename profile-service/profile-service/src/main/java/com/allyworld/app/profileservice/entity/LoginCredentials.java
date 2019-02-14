@@ -1,4 +1,4 @@
-package com.app.allyworld.AllyWebSite.enitity;
+package com.allyworld.app.profileservice.entity;
 
 public class LoginCredentials {
 	
@@ -32,7 +32,10 @@ public class LoginCredentials {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "LoginCredentials [email=" + email + ", password=" + password + "]";
+	}
 
 }

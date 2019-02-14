@@ -1,6 +1,5 @@
 package com.allyworld.app.profileservice.entity;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -14,22 +13,15 @@ public class Profile {
 	private String userName;
 	private String fullName;
 	private String gender;
-	private LocalDateTime dateOfBirth;
+	private String dateOfBirth;
 	private Long phoneNumber;
 	private String relationShipStatus;
 	private String currentAddress;
 	private String permanentAddress;
+	private LoginCredentials login;
 	private List<Integer> friendsList;
 	private List<Integer> pendingFriendList;
 	private static int profileIdGenerator;
-
-	@Override
-	public String toString() {
-		return "Profile [profileId=" + profileId + ", userName=" + userName + ", fullName=" + fullName + ", gender="
-				+ gender + ", dateOfBirth=" + dateOfBirth + ", phoneNumber=" + phoneNumber + ", relationShipStatus="
-				+ relationShipStatus + ", currentAddress=" + currentAddress + ", permanentAddress=" + permanentAddress
-				+ ", friendsList=" + friendsList + ", pendingFriendList=" + pendingFriendList + "]";
-	}
 
 	static {
 		profileIdGenerator = 100;
@@ -43,16 +35,17 @@ public class Profile {
 
 	}
 
-	public Profile(String userName, String fullName, String gender, LocalDateTime dateOfBirth, Long phoneNumber,
-			String relationShipStatus, String currentAddress, String permanentAddress, List<Integer> friendsList,
-			List<Integer> pendingFriendList) {
-		super();
+	
 
+	public Profile(String userName, String fullName, String gender, String dateOfBirth,
+			Long phoneNumber, String relationShipStatus, String currentAddress, String permanentAddress,
+			List<Integer> friendsList, List<Integer> pendingFriendList) {
+		super();
 		this.userName = userName;
 		this.fullName = fullName;
 		this.gender = gender;
-		this.phoneNumber = phoneNumber;
 		this.dateOfBirth = dateOfBirth;
+		this.phoneNumber = phoneNumber;
 		this.relationShipStatus = relationShipStatus;
 		this.currentAddress = currentAddress;
 		this.permanentAddress = permanentAddress;
@@ -96,12 +89,12 @@ public class Profile {
 		this.gender = gender;
 	}
 
-	public LocalDateTime getDateOfBirth() {
+	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(LocalDateTime dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setDateOfBirth(String localDateTime) {
+		this.dateOfBirth = localDateTime;
 	}
 
 	public String getRelationShipStatus() {
@@ -143,5 +136,29 @@ public class Profile {
 	public void setPendingFriendList(List<Integer> pendingFriendList) {
 		this.pendingFriendList = pendingFriendList;
 	}
+
+
+
+	public LoginCredentials getLogin() {
+		return login;
+	}
+
+
+
+	public void setLogin(LoginCredentials login) {
+		this.login = login;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Profile [profileId=" + profileId + ", userName=" + userName + ", fullName=" + fullName + ", gender="
+				+ gender + ", dateOfBirth=" + dateOfBirth + ", phoneNumber=" + phoneNumber + ", relationShipStatus="
+				+ relationShipStatus + ", currentAddress=" + currentAddress + ", permanentAddress=" + permanentAddress
+				+ ", login=" + login + ", friendsList=" + friendsList + ", pendingFriendList=" + pendingFriendList
+				+ "]";
+	}
+	
 
 }

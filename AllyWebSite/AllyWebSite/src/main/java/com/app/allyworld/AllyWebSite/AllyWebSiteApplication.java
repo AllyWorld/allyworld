@@ -8,6 +8,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 //@EnableDiscoveryClient
 //@EnableOAuth2Sso
+//@EnableWebSecurity
 public class AllyWebSiteApplication {
 
 	public static void main(String[] args) {
